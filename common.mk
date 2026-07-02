@@ -37,6 +37,7 @@ PRODUCT_PACKAGES += \
     WifiResTarget
 
 TARGET_BOARD_PLATFORM := kalama
+TARGET_USES_KERNEL_PLATFORM := false
 
 # Add common definitions for Qualcomm
 $(call inherit-product, device/qcom/common/common.mk)
