@@ -69,7 +69,6 @@ prebuilt_root {
     name: "init.system.qcom.rc",
     filename: "init.qcom.rc",
     src: "init.system.qcom.rc",
-    install_in_root: true,
 }
 
 prebuilt_etc {

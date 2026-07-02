@@ -8,8 +8,10 @@
 PRODUCT_PACKAGES += \
     vendor_bt_firmware_mountpoint \
     vendor_dsp_mountpoint \
-    vendor_firmware_mnt_mountpoint \
-    vendor_fsg_mountpoint
+    vendor_firmware_mnt_mountpoint
+
+PRODUCT_COPY_FILES += \
+    hardware/motorola/fsg/.keep:$(TARGET_COPY_OUT_VENDOR)/fsg/.keep
 
 PRODUCT_BUILD_SUPER_PARTITION := false
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
@@ -34,8 +36,10 @@ PRODUCT_PACKAGES += \
     FrameworksResTarget \
     WifiResTarget
 
+TARGET_BOARD_PLATFORM := kalama
+
 # Add common definitions for Qualcomm
-$(call inherit-product, hardware/qcom-caf/common/common.mk)
+$(call inherit-product, device/qcom/common/common.mk)
 
 # A/B
 $(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota/launch_with_vendor_ramdisk.mk)
@@ -86,7 +90,7 @@ PRODUCT_PACKAGES += \
     libsndcardparser \
     libtinycompress
 
-AUDIO_HAL_DIR := hardware/qcom-caf/sm8550/audio/primary-hal
+AUDIO_HAL_DIR := vendor/qcom/opensource/audio-hal/primary-hal
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/audio/sku_kalama/audio_effects.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/sku_kalama/audio_effects.xml \
@@ -133,19 +137,8 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/generic_ramdisk.mk)
 PRODUCT_PACKAGES += \
     fastbootd
 
-# GPS
-PRODUCT_PACKAGES += \
-    gnss@2.0-base.policy \
-    gnss@2.0-edgnss-daemon.policy \
-    gnss@2.0-qsap-location.policy \
-    gnss@2.0-xtra-daemon.policy \
-    gnss@2.0-xtwifi-client.policy
-
 PRODUCT_PACKAGES += \
     apdr.conf \
-    batching.conf \
-    gnss_antenna_info.conf \
-    gps.conf \
     izat.conf \
     lowi.conf \
     sap.conf \
@@ -215,10 +208,6 @@ PRODUCT_COPY_FILES += \
 # Lineage Health
 PRODUCT_PACKAGES += \
     vendor.lineage.health-service.default
-
-# LiveDisplay
-PRODUCT_PACKAGES += \
-    vendor.lineage.livedisplay@2.1-service.motorola_kalama
 
 # Media
 PRODUCT_COPY_FILES += \
@@ -322,6 +311,8 @@ PRODUCT_PACKAGES += \
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
+    hardware/qcom/wlan \
+    hardware/qcom/wlan/qcwcn \
     $(LOCAL_PATH) \
     kernel/motorola/sm8550 \
     kernel/motorola/sm8550-modules
@@ -343,9 +334,6 @@ PRODUCT_PACKAGES += \
     qti-telephony-utils-prd \
     qti_telephony_utils.xml \
     qti_telephony_utils_prd.xml \
-    telephony-ext
-
-PRODUCT_BOOT_JARS += \
     telephony-ext
 
 PRODUCT_COPY_FILES += \

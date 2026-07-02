@@ -162,14 +162,13 @@ BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE := default
 DEVICE_FRAMEWORK_MANIFEST_FILE += $(COMMON_PATH)/framework_manifest.xml
 DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE := \
     $(COMMON_PATH)/device_framework_matrix.xml \
-    hardware/qcom-caf/common/vendor_framework_compatibility_matrix.xml \
-    vendor/lineage/config/device_framework_matrix.xml
-DEVICE_MATRIX_FILE := hardware/qcom-caf/common/compatibility_matrix.xml
+    vendor/qcom/opensource/core-utils/vendor_framework_compatibility_matrix.xml
+DEVICE_MATRIX_FILE := device/qcom/vendor-common/compatibility_matrix.xml
 DEVICE_MANIFEST_SKUS := kalama
 DEVICE_MANIFEST_KALAMA_FILES += \
     $(COMMON_PATH)/manifest_kalama.xml \
-    hardware/qcom-caf/sm8550/audio/primary-hal/configs/common/manifest_non_qmaa.xml \
-    hardware/qcom-caf/sm8550/audio/primary-hal/configs/common/manifest_non_qmaa_extn.xml
+    vendor/qcom/opensource/audio-hal/primary-hal/configs/common/manifest_non_qmaa.xml \
+    vendor/qcom/opensource/audio-hal/primary-hal/configs/common/manifest_non_qmaa_extn.xml
 
 # Lineage Health
 TARGET_HEALTH_CHARGING_CONTROL_SUPPORTS_BYPASS := false

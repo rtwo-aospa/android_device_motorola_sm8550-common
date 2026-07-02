@@ -6,18 +6,21 @@ prebuilt_etc {
 
 prebuilt_etc {
     name: "batching.conf",
+    enabled: false,
     vendor: true,
     src: "batching.conf",
 }
 
 prebuilt_etc {
     name: "gnss_antenna_info.conf",
+    enabled: false,
     vendor: true,
     src: "gnss_antenna_info.conf",
 }
 
 prebuilt_etc {
     name: "gps.conf",
+    enabled: false,
     vendor: true,
     src: "gps.conf",
 }
@@ -48,6 +51,7 @@ prebuilt_etc {
 
 prebuilt_etc {
     name: "gnss@2.0-base.policy",
+    enabled: false,
     vendor: true,
     sub_dir: "seccomp_policy",
     src: "seccomp_policy/gnss@2.0-base.policy",
@@ -55,6 +59,7 @@ prebuilt_etc {
 
 prebuilt_etc {
     name: "gnss@2.0-edgnss-daemon.policy",
+    enabled: false,
     vendor: true,
     sub_dir: "seccomp_policy",
     src: "seccomp_policy/gnss@2.0-edgnss-daemon.policy",
@@ -62,6 +67,7 @@ prebuilt_etc {
 
 prebuilt_etc {
     name: "gnss@2.0-qsap-location.policy",
+    enabled: false,
     vendor: true,
     sub_dir: "seccomp_policy",
     src: "seccomp_policy/gnss@2.0-qsap-location.policy",
@@ -69,6 +75,7 @@ prebuilt_etc {
 
 prebuilt_etc {
     name: "gnss@2.0-xtra-daemon.policy",
+    enabled: false,
     vendor: true,
     sub_dir: "seccomp_policy",
     src: "seccomp_policy/gnss@2.0-xtra-daemon.policy",
@@ -76,6 +83,7 @@ prebuilt_etc {
 
 prebuilt_etc {
     name: "gnss@2.0-xtwifi-client.policy",
+    enabled: false,
     vendor: true,
     sub_dir: "seccomp_policy",
     src: "seccomp_policy/gnss@2.0-xtwifi-client.policy",
