@@ -1,2 +1,2 @@
-hal_attribute_lineage(cameradesktop)
-hal_attribute_lineage(ifaa)
+hal_attribute(cameradesktop)
+hal_attribute(ifaa)
