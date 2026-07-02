@@ -46,11 +46,11 @@ BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOT_HEADER_VERSION)
 BOARD_RAMDISK_USE_LZ4 := true
 BOARD_USES_GENERIC_KERNEL_IMAGE := true
 TARGET_KERNEL_SOURCE := kernel/motorola/sm8550
-TARGET_KERNEL_CONFIG := \
-    gki_defconfig \
-    vendor/kalama_GKI.config \
-    vendor/ext_config/moto-kalama.config \
-    vendor/ext_config/moto-kalama-gki.config
+TARGET_KERNEL_CONFIG := gki_defconfig
+KERNEL_FRAGMENT_CONFIG := \
+    arch/arm64/configs/vendor/kalama_GKI.config \
+    arch/arm64/configs/vendor/ext_config/moto-kalama.config \
+    arch/arm64/configs/vendor/ext_config/moto-kalama-gki.config
 
 # Kernel modules
 TARGET_KERNEL_EXT_MODULE_ROOT := kernel/motorola/sm8550-modules
