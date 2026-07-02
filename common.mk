@@ -312,6 +312,7 @@ PRODUCT_PACKAGES += \
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
+    hardware/qcom/display \
     hardware/qcom/display/libdebug \
     hardware/qcom/wlan \
     hardware/qcom/wlan/qcwcn \
